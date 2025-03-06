@@ -8,7 +8,7 @@ import { io } from "socket.io-client";
 import { AppProvider } from './Context.tsx'; 
 import Skins from './Skins';
 
-const serverURL = "https://core-server-ten.vercel.app/"
+const serverURL = "https://core-server-wxr9.onrender.com/"
 const socket = io(serverURL);
 
 

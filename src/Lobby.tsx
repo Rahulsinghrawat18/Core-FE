@@ -8,7 +8,7 @@ import { useAppContext } from './Context';
 import LobbyBg from "./assets/lobby.jpg";
 import contractABI from './abi.json';
 
-const serverURL = "https://core-server-ten.vercel.app/"
+const serverURL = "https://core-server-wxr9.onrender.com/"
 // CORE local network settings
 const contractAddress = '0x1AA7a043487bf78C64B28b810dE8c63246B04edc'; // Default CORE first address
 const CORE_NETWORK = {
