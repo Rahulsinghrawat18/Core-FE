@@ -9,7 +9,7 @@ import { AppProvider } from './Context.tsx';
 import Skins from './Skins';
 
 const serverURL = "https://core-server-wxr9.onrender.com"
-// const serverURL = "http://localhost:3000"
+//const serverURL = "http://localhost:3000"
 const socket = io(serverURL);
 
 

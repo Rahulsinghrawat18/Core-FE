@@ -75,9 +75,13 @@ const Skins: React.FC = () => {
       await tx.wait();
       setBoughtItems((prev) => new Set(prev).add(id));
     } catch (error) {
+      alert(
+        "Error buying item : Insufficient Funds. Go To https://scan.test2.btcs.network/faucet to get some tokens."
+        )
       console.error("Error buying item:", error);
     }
   };
+  
 
   const chooseBoughtSkin = (name: string, imgLoc: string) => {
     const category = buyableSkins[name].category;
