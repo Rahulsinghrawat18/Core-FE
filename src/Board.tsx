@@ -418,21 +418,41 @@ export default function Board({socket}: BoardProps ) {
     }
   };
 
-  const registerWinner = async() =>{
-    setRegistering(2);
+  // const registerWinner = async() =>{
+  //   setRegistering(2);
     
+  //   try {
+  //   const tx = await contract.registerWinner(roomCode, winnerAddr);
+  //   await tx.wait();
+  // } catch (error) {
+  //   console.error("Error buying item:", error);
+  // }
+  //   setRegistering(3);
+  //   console.log("Registered the winner");
+  //   const winnings =await contract.getWinnings(winnerAddr);
+  //   const winBal =await  contract.getWinningTokensAmount(winnerAddr);
+  //   console.log("Winnings", winnings, " balance ", winBal);
+  // }
+
+  const registerWinner = async () => {
+    setRegistering(2);
+  
     try {
-    const tx = await contract.registerWinner(roomCode, winnerAddr);
-    await tx.wait();
-  } catch (error) {
-    console.error("Error buying item:", error);
-  }
-    setRegistering(3);
-    console.log("Registered the winner");
-    const winnings =await contract.getWinnings(winnerAddr);
-    const winBal =await  contract.getWinningTokensAmount(winnerAddr);
-    console.log("Winnings", winnings, " balance ", winBal);
-  }
+      const tx = await contract.registerWinner(roomCode, winnerAddr);
+      await tx.wait();
+      
+      setRegistering(3); // Only set to 3 if transaction is successful
+      console.log("Registered the winner");
+  
+      const winnings = await contract.getWinnings(winnerAddr);
+      const winBal = await contract.getWinningTokensAmount(winnerAddr);
+      console.log("Winnings:", winnings, "Balance:", winBal);
+    } catch (error) {
+      console.error("Error registering winner:", error);
+      alert("Transaction failed. Please try again.");
+      setRegistering(1); // Reset to allow reattempt if needed
+    }
+  };  
 
   const SelfPlayer = playerNumber;
   const OpponentPlayer = playerNumber === 1 ? 2 : 1;
