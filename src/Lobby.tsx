@@ -8,13 +8,13 @@ import { useAppContext } from './Context';
 import LobbyBg from "./assets/lobby.jpg";
 import contractABI from './abi.json';
 
-const serverURL = "https://core-server-wxr9.onrender.com/"
+const serverURL = "https://core-server-wxr9.onrender.com"
 // CORE local network settings
 const contractAddress = '0x1AA7a043487bf78C64B28b810dE8c63246B04edc'; // Default CORE first address
 const CORE_NETWORK = {
   chainId: '0x45a', // 1114 in hex
   chainName: 'Core Blockchain Testnet2',
-  rpcUrls: ['https://rpc.test.btcs.network/'],  // Default CORE URL
+  rpcUrls: ['https://rpc.test2.btcs.network/'],  // Default CORE URL
 };
 
 interface LobbyProps {
